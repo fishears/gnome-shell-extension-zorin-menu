@@ -1,0 +1,9 @@
+{
+"extension-id": "zorin-menu",
+"uuid": "zorin-menu@zorinos.com",
+"gettext-domain": "zorinmenu",
+"name": "Zorin Menu",
+"description": "The official applications menu for Zorin OS.",
+"shell-version": [ "3.18" ],
+"url": "https://github.com/ZorinOS/zorin-menu"
+}
