@@ -64,9 +64,6 @@ const HORIZ_FACTOR = 5;
 const NAVIGATION_REGION_OVERSHOOT = 50;
 const MINIMUM_PADDING = 4;
 
-// Menu panel icon
-const menu_icon = Me.path + '/zorin-icon-symbolic.svg';
-
 // Menu Layout Enum
 const visibleMenus = {
     ALL: 0,
@@ -109,9 +106,8 @@ const ActivitiesMenuItem = new Lang.Class({
     _init: function(button) {
 	    this.parent();
         this._button = button;
-        this._icon = new St.Icon({ icon_name: 'view-fullscreen-symbolic',
-                                   style_class: 'popup-menu-icon',
-                                   icon_size: 16});
+        this._icon = new St.Icon({ icon_name: 'start-here-symbolic',
+                                   style_class: 'popup-menu-icon'});
         this.actor.add_child(this._icon);
         let label = new St.Label({ text: _("Activities Overview"), y_expand: true,
                                       y_align: Clutter.ActorAlign.CENTER });
