@@ -627,7 +627,7 @@ const PlaceMenuItem = new Lang.Class({
     },
 });
 
-// Aplication menu class
+// Application menu class
 const ApplicationsMenu = new Lang.Class({
     Name: 'ApplicationsMenu',
     Extends: PopupMenu.PopupMenu,
@@ -694,10 +694,8 @@ const ApplicationsButton = new Lang.Class({
         Main.panel.menuManager.addMenu(this.menu);
         this.actor.accessible_role = Atk.Role.LABEL;
         let hbox = new St.BoxLayout({ style_class: 'panel-status-menu-box' });
-        this._iconSize = 32;
-        this._icon = new St.Icon({ gicon: Gio.icon_new_for_string(menu_icon),
-                                   icon_size: this._iconSize,
-                                   style_class: 'popup-menu-icon' });
+        this._icon = new St.Icon({ icon_name: 'start-here-symbolic',
+                                   style_class: 'popup-menu-icon'});
         hbox.add_child(this._icon);
         this.actor.add_actor(hbox);
         this.actor.name = 'panelApplications';
