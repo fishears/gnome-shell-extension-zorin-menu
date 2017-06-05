@@ -1044,11 +1044,12 @@ const ApplicationsButton = new Lang.Class({
                                                                 can_focus: false });
 
             // Add session buttons to menu
-            let power = new PowerButton(this);
-            this.actionsBox.actor.add(power.actor, { expand: true,
-                                                     x_fill: false,
-                                                     y_align: St.Align.START
-                                                   });
+
+            let logout = new LogoutButton(this);
+            this.actionsBox.actor.add(logout.actor, { expand: true,
+                                                      x_fill: false,
+                                                      y_align: St.Align.START
+                                                    });
 
             let lock = new LockButton(this);
             this.actionsBox.actor.add(lock.actor, { expand: true,
@@ -1056,11 +1057,11 @@ const ApplicationsButton = new Lang.Class({
                                                     y_align: St.Align.START
                                                   });
 
-            let logout = new LogoutButton(this);
-            this.actionsBox.actor.add(logout.actor, { expand: true,
-                                                      x_fill: false,
-                                                      y_align: St.Align.START
-                                                    });
+            let power = new PowerButton(this);
+            this.actionsBox.actor.add(power.actor, { expand: true,
+                                                     x_fill: false,
+                                                     y_align: St.Align.START
+                                                   });
 
             let user = new UserMenuItem(this);
             this.rightBox.add(user.actor, { expand: false,
