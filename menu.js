@@ -216,6 +216,31 @@ const SuspendButton = new Lang.Class({
     }
 });
 
+// Lock Screen Button
+const LockButton = new Lang.Class({
+    Name: 'LockButton',
+
+    // Initialize the button
+    _init: function(button) {
+        this._button = button;
+        this.actor = new St.Button({
+            reactive: true,
+            can_focus: true,
+            track_hover: true,
+            accessible_name: _("Lock"),
+            style_class: 'system-menu-action'
+        });
+        this.actor.child = new St.Icon({ icon_name: 'changes-prevent-symbolic' });
+        this.actor.connect('clicked', Lang.bind(this, this._onClick));
+    },
+
+    // Activate the button (Lock the screen)
+    _onClick: function() {
+        this._button.menu.toggle();
+        Main.screenShield.lock(true);
+    }
+});
+
 // Menu item to go back to category view
 const BackMenuItem = new Lang.Class({
     Name: 'BackMenuItem',
@@ -1057,6 +1082,12 @@ const ApplicationsButton = new Lang.Class({
                                                       x_fill: false,
                                                       y_align: St.Align.START
                                                     });
+
+            let lock = new LockButton(this);
+            this.actionsBox.actor.add(lock.actor, { expand: true,
+                                                    x_fill: false,
+                                                    y_align: St.Align.START
+                                                  });
 
             let suspend = new SuspendButton(this);
             this.actionsBox.actor.add(suspend.actor, { expand: true,
