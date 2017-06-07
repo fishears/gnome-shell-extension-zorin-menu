@@ -1099,7 +1099,7 @@ const ApplicationsButton = new Lang.Class({
             this.rightBox.add(settings.actor, { expand: false,
                                                  x_fill: true, y_fill: false,
                                                  y_align: St.Align.START });
-            let tweak = new ShortcutMenuItem(this, _("Gnome Tweak Tool"), "preferences-other-symbolic", "gnome-tweak-tool");
+            let tweak = new ShortcutMenuItem(this, _("Gnome Tweak Tool"), "gnome-tweak-tool-symbolic", "gnome-tweak-tool");
             this.rightBox.add(tweak.actor, { expand: false,
                                                  x_fill: true, y_fill: false,
                                                  y_align: St.Align.START });
